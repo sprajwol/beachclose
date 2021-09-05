@@ -39,8 +39,8 @@ class Member(models.Model):
 
     def __str__(self):
         return str(self.full_name)
-        
-class Testimonials(models.Model):
+
+class Testimonial(models.Model):
     full_name = models.CharField(max_length=100, verbose_name='Full Name')
     image = models.ImageField(upload_to=get_testimonial_image_uploadpath, blank=True, null=True, verbose_name='Image')
     organization = models.CharField(max_length=100, verbose_name='Reviewer Organization Name')
