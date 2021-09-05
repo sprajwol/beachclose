@@ -1,17 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    {% load static %}
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block metaarea %}
+    {% endblock metaarea %}
 
     <title>
         {% block titlearea %}
         {% endblock titlearea %}
     </title>
 
+    <!-- CSS Linking -->
+    <!-- Custom -->
+    <link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\style.css' %}" />
+    {% block cssarea %}
+    {% endblock cssarea %}
 </head>
-<body>
-    
+
+<body
+    class="page header-fixed no-sidebar site-layout-full-width header-style-2 has-topbar topbar-style-2 menu-has-search menu-has-cart">
+    <div id="wrapper" class="animsition">
+        <div id="page" class="clearfix">
+
+            <!-- Header Wrap -->
+            <div id="site-header-wrap" class="absolute">
+                <!-- Top Bar -->
+                <div id="top-bar">
+                    <div class="wrap-themesflat-container">
+                        <div id="top-bar-inner" class="themesflat-container">
+                            <div class="top-bar-inner-wrap">
+                                <div class="top-bar-content">
+                                    <span class="address content"><a href="#">Sydney, Australia</a></span>
+                                    <span class="phone content"><a href="#">Phone 01234567891</a></span>
+                                </div><!-- /.top-bar-content -->
+
+                                <div class="top-bar-content-right">
+                                    <div class="top-bar-socials">
+                                        <div class="inner">
+                                            <span class="texts">Follow Us:</span>
+                                            <span class="icons">
+                                                <a href="#" title="Facebook">
+                                                    <span class="finance-icon-Facebook" aria-hidden="true"></span>
+                                                </a>
+                                                <a href="#" title="Twitter">
+                                                    <span class="finance-icon-Twitter" aria-hidden="true"></span>
+                                                </a>
+                                                <a href="#" title="Linkedin">
+                                                    <span class="flat-icon-linkedin" aria-hidden="true"></span>
+                                                </a>
+                                                <a href="#" title="Instagram">
+                                                    <span class="flat-icon-instagram" aria-hidden="true"></span>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div><!-- /.top-bar-socials -->
+                                </div><!-- .top-bar-content-right -->
+                            </div>
+                        </div>
+                    </div><!-- /.wrap-themesflat-container -->
+                </div><!-- /#top-bar -->
+
+                <!-- Header -->
+                <header id="site-header">
+                    <div class="wrap-themesflat-container">
+                        <div id="site-header-inner" class="themesflat-container">
+                            <div class="wrap-inner">
+                                <div id="site-logo" class="clearfix">
+                                    <div id="site-logo-inner">
+                                        <a href="{% url 'home' %}" title="Beachclose" rel="home" class="main-logo"><img
+                                                src="{% static 'home\static_images\logo.png' %}" width="184" height="40"
+                                                alt="Beachclose"
+                                                data-retina="{% static 'home\static_images\logo@2x.png' %}"
+                                                data-width="184" data-height="40"></a>
+                                    </div>
+                                </div><!-- /#site-logo -->
+
+                                <div class="mobile-button"><span></span></div><!-- //mobile menu button -->
+
+                                <nav id="main-nav" class="main-nav">
+                                    <ul id="menu-primary-menu" class="menu">
+                                        <li class="menu-item {{ home_page }} menu-item-has-children"><a
+                                                href="{% url 'home' %}">HOME</a>
+
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children"><a href="page-about.html">ABOUT
+                                                US</a>
+
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children"><a
+                                                href="page-services.html">SERVICES</a>
+                                            <ul class="sub-menu">
+                                                <li class="menu-item"><a href="page-services.html">Commodity
+                                                        Analytics</a></li>
+                                                <li class="menu-item"><a href="page-services.html">Investor
+                                                        Presentations</a></li>
+                                                <li class="menu-item"><a href="page-services.html">MOS</a></li>
+                                                <li class="menu-item"><a href="page-services.html">Professional Witness
+                                                        Work</a></li>
+                                                <li class="menu-item"><a href="page-services.html">Marketing and
+                                                        Business Strategy</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="menu-item menu-item-has-children"><a
+                                                href="page-contact.html">CONTACT</a>
+
+                                        </li>
+
+
+                                    </ul>
+                                </nav><!-- /#main-nav -->
+
+
+                                <div id="header-search">
+                                    <a class="header-search-icon" href="#"><span
+                                            class="search-icon finance-icon-search"></span></a>
+                                    <form role="search" method="get" class="header-search-form" action="#">
+                                        <label class="screen-reader-text">Search for:</label>
+                                        <input type="text" value="" name="s" class="header-search-field"
+                                            placeholder="Type and hit enter...">
+                                        <button type="submit" class="header-search-submit"
+                                            title="Search">Search</button>
+                                    </form>
+                                </div><!-- /#header-search -->
+                            </div>
+                        </div><!-- /#site-header-inner -->
+                    </div><!-- /.wrap-themesflat-container -->
+                </header><!-- /#site-header -->
+            </div><!-- #site-header-wrap -->
+
+
+            {% block content %}
+            {% endblock content %}
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div id="footer-widgets" class="themesflat-container title-style-1">
+                    <div class="themesflat-row gutter-30">
+                        <div class="span_1_of_4 col">
+                            <div class="widget widget_text padding-left-7">
+                                <div class="textwidget">
+                                    <p class="margin-bottom-22">
+                                        <img src="{% static 'home\static_images\logo-footer.png' %}" width="226"
+                                            height="50" alt="Finance"
+                                            data-retina="{% static 'home\static_images\logo-footer@2x.png' %}"
+                                            data-width="226" data-height="50">
+                                    </p>
+                                    <p>We have a wide breadth of experience for any Financial Assistance. We can assist
+                                        you with the best service. Grow your business today.</p>
+                                </div>
+                            </div><!-- /.widget_text -->
+
+
+                        </div><!-- /.span_1_of_4 -->
+
+                        <div class="span_1_of_4 col">
+                            <div class="widget widget_tag_cloud margin-top-6 padding-left-9">
+                                <h2 class="widget-title margin-bottom-43"><span>Pages</span></h2>
+                                <div class="tagcloud">
+                                    <a href="home.html">Home</a>
+                                    <a href="page-about.html">About us</a>
+                                    <a href="page-services.html">Services</a>
+                                    <a href="page-contact.html">Contact</a>
+
+
+                                </div>
+                            </div><!-- /.widget_tag_cloud -->
+                        </div><!-- /.span_1_of_4 -->
+
+                        <div class="span_1_of_4 col">
+                            <div class="widget widget_twitter margin-top-6 padding-left-13">
+                                <h2 class="widget-title"><span>Contact Details</span></h2>
+                                <div class="widget widget_information padding-left-7">
+                                    <ul>
+                                        <li class="address clearfix">
+                                            <div class="inner">
+                                                <i class=" finance-icon-map"></i>
+                                                <span class="text">Sydney, Australia</span>
+                                            </div>
+                                        </li>
+                                        <li class="email clearfix">
+                                            <div class="inner">
+                                                <i class=" finance-icon-Email02"></i>
+                                                <span class="text">info@beachclose.com</span>
+                                            </div>
+                                        </li>
+                                        <li class="phone clearfix">
+                                            <div class="inner">
+                                                <i class=" finance-icon-Phone"></i>
+                                                <span class="text">+1 1234567891 / 9:30 AM - 5:30 PM</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!-- /.widget_recent_news -->
+                        </div><!-- /.span_1_of_4 -->
+
+
+
+
+
+
+                    </div><!-- /.themesflat-row -->
+                </div><!-- /#footer-widgets -->
+            </footer><!-- /#footer -->
+
+            <!-- Bottom -->
+            <div id="bottom" class="clearfix style-1">
+                <div id="bottom-bar-inner" class="themesflat-container">
+                    <div class="bottom-bar-inner-wrap">
+                        <div class="bottom-bar-content">
+                            <div id="copyright" class="padding-left-9">
+                                &copy; <a href="#">COPYRIGHT</a> BEACHCLOSE.
+                            </div><!-- /#copyright -->
+
+
+                            <!-- INCASE OF BOTTOM LINKS NEEDED    
+            </div>
+
+            <div class="bottom-bar-menu">
+                <ul class="bottom-nav">
+                    <li class="menu-item"><a href="#">About Us</a></li>
+                    <li class="menu-item"><a href="#">Terms</a></li>
+                    <li class="menu-item"><a href="#">Services</a></li>
+                    <li class="menu-item"><a href="#">Contacts</a></li>
+                </ul>
+            </div> -->
+
+
+
+                        </div>
+                    </div>
+                </div><!-- /#bottom -->
+
+            </div>
+        </div>
+
+        <!-- ALL JS LINKING ARE HERE -->
+        <script type=" text/javascript" src="{% static 'home\styles\js\jquery.min.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\plugins.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\bootstrap.min.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\animsition.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\countto.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\owl.carousel.min.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\equalize.min.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\typed.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\vegas.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\shortcodes.js' %}"></script>
+        <script type=" text/javascript" src="{% static 'home\styles\js\main.js' %}"></script>
+
+        {% block javascript %}
+        {% endblock javascript %}
 </body>
+
 </html>
