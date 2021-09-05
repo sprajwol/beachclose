@@ -2,10 +2,10 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from about import views as about_views
+from contact import views as contact_views
 
 urlpatterns = [
-    path('', about_views.AboutView.as_view(), name='about'),
+    path('', contact_views.ContactView.as_view(), name='contact'),
 ]
 
 if settings.DEBUG:
