@@ -385,78 +385,35 @@ About | Beachclose
                             <!-- TEAM -->
                             <div class="team">
                                 <div class="row">
-
+                                    {% if members_data %}
+                                    {% for each_member in members_data %}
                                     <!-- MEMBER -->
                                     <div class="col-md-3 col-sm-4 col-xs-6">
-                                        <article> <img class="img-responsive" src="images/member-1.jpg" alt="">
-                                            <h5 class="team-name">Stevan Smith</h5>
+                                        <article> <img class="img-responsive" src="/media/{{ each_member.image }}"
+                                                alt="{{ each_member.full_name }}">
+                                            <h5 class="team-name">{{ each_member.full_name }}</h5>
                                             <div class="team-hover">
-                                                <h5>Paul Walker</h5>
-                                                <span>Engine Specialist</span>
-                                                <p><i class="icon-envelope-open"></i> Support@Info.Com</p>
-                                                <p><i class="icon-call-in"></i> +(800) 23-145-451</p>
+                                                <h5>{{ each_member.full_name }}</h5>
+                                                <span>{{ each_member.position }}</span>
+                                                <p><i class="icon-envelope-open"></i> {{ each_member.email }}</p>
+                                                <p><i class="icon-call-in"></i> {{ each_member.contact_number }}</p>
                                                 <ul class="social">
-                                                    <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a href="{{ each_member.facebook }}"><i
+                                                                class="fa fa-facebook"></i></a></li>
+                                                    <li><a href="{{ each_member.twitter }}"><i
+                                                                class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="{{ each_member.linkedin }}"><i
+                                                                class="fa fa-linkedin-in"></i></a></li>
                                                 </ul>
                                             </div>
                                         </article>
                                     </div>
+                                    {% endfor %}
+                                    {% else %}
+                                    <h5 class="">No team member's data has been found.</h5>
+                                    {% endif %}
 
-                                    <!-- MEMBER -->
-                                    <div class="col-md-3 col-sm-4 col-xs-6">
-                                        <article> <img class="img-responsive" src="images/member-2.jpg" alt="">
-                                            <h5 class="team-name">Paul Walker</h5>
-                                            <div class="team-hover">
-                                                <h5>Paul Walker</h5>
-                                                <span>Engine Specialist</span>
-                                                <p><i class="icon-envelope-open"></i> Support@Info.Com</p>
-                                                <p><i class="icon-call-in"></i> +(800) 23-145-451</p>
-                                                <ul class="social">
-                                                    <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </article>
-                                    </div>
 
-                                    <!-- MEMBER -->
-                                    <div class="col-md-3 col-sm-4 col-xs-6">
-                                        <article> <img class="img-responsive" src="images/member-3.jpg" alt="">
-                                            <h5 class="team-name">Luck Walker</h5>
-                                            <div class="team-hover">
-                                                <h5>Paul Walker</h5>
-                                                <span>Engine Specialist</span>
-                                                <p><i class="icon-envelope-open"></i> Support@Info.Com</p>
-                                                <p><i class="icon-call-in"></i> +(800) 23-145-451</p>
-                                                <ul class="social">
-                                                    <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </article>
-                                    </div>
-
-                                    <!-- MEMBER -->
-                                    <div class="col-md-3 col-sm-4 col-xs-6">
-                                        <article> <img class="img-responsive" src="images/member-4.jpg" alt="">
-                                            <h5 class="team-name">Brett Connor</h5>
-                                            <div class="team-hover">
-                                                <h5>Paul Walker</h5>
-                                                <span>Engine Specialist</span>
-                                                <p><i class="icon-envelope-open"></i> Support@Info.Com</p>
-                                                <p><i class="icon-call-in"></i> +(800) 23-145-451</p>
-                                                <ul class="social">
-                                                    <li><a href="#."><i class="fa fa-facebook"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a href="#."><i class="fa fa-google-plus"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </article>
-                                    </div>
                                 </div>
                             </div>
                         </div>

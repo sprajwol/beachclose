@@ -68,7 +68,7 @@ Beachclose
                                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;"
                                         data-start="1000" data-splitin="none" data-splitout="none"
                                         data-responsive_offset="on">
-                                        <a href="page-contact.html" class="themesflat-button accent big video"><i
+                                        <a href="{% url 'contact' %}" class="themesflat-button accent big video"><i
                                                 class="flat-icon-check-1 font-size-25"></i>LEARN MORE</a>
                                     </div>
 
@@ -208,7 +208,7 @@ Beachclose
                                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;"
                                         data-start="1000" data-splitin="none" data-splitout="none"
                                         data-responsive_offset="on">
-                                        <a href="page-contact.html" class="themesflat-button accent big video"><i
+                                        <a href="{% url 'contact' %}" class="themesflat-button accent big video"><i
                                                 class="flat-icon-check-1 font-size-25"></i>LEARN MORE</a>
                                     </div>
 
@@ -608,214 +608,38 @@ Beachclose
                                         data-loop="false" data-gap="25" data-column="3" data-column2="2"
                                         data-column3="1">
                                         <div class="owl-carousel owl-theme">
+
+                                            {% if testimonials_data %}
+                                            {% for each_testimonial in testimonials_data %}
                                             <div class="themesflat-testimonials style-1 clearfix image-circle">
                                                 <div class="item">
                                                     <div class="inner">
                                                         <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-1.png"
-                                                                alt="Image">
+                                                            <img src="/media/{{ each_testimonial.image }}" alt="Image">
                                                         </div>
                                                         <blockquote class="text">
                                                             <div class="start">
+                                                                {% with ''|center:each_testimonial.rating as range %}
+                                                                {% for _ in range %}
                                                                 <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
+                                                                {% endfor %}
+                                                                {% endwith %}
                                                             </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
+                                                            <p>{{ each_testimonial.testimonial }}</p>
                                                             <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
+                                                                <h6 class="name">{{ each_testimonial.full_name }}</h6>
+                                                                <span
+                                                                    class="position">{{ each_testimonial.organization }}</span>
                                                             </div>
                                                         </blockquote>
                                                     </div>
                                                 </div>
                                             </div><!-- /.themesflat-testimonials -->
+                                            {% endfor %}
+                                            {% else %}
+                                            <h5 class="">No testimonial data has been found.</h5>
+                                            {% endif %}
 
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-3.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-1.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-3.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>Very friendly staff that has worked with me on payment
-                                                                arrangement to insure that I am able to make my payment
-                                                                and satisfied them. I would recommend them to anyone who
-                                                                is looking for an Auto Loan. Thank you so much for your
-                                                                Service.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
                                         </div>
                                     </div><!-- /.themesflat-carousel-box -->
 
