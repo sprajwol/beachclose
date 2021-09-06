@@ -140,7 +140,7 @@ Beachclose
                                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;"
                                         data-start="1000" data-splitin="none" data-splitout="none"
                                         data-responsive_offset="on">
-                                        <a href="page-contact.html" class="themesflat-button accent big video">
+                                        <a href="{% url 'contact' %}" class="themesflat-button accent big video">
                                             <img src="{% static 'home\static_images\get-quote.png' %}" alt="Quote Icon">
                                             GET QUOTE
                                         </a>
@@ -156,7 +156,7 @@ Beachclose
                                         data-mask_in="x:0px;y:[100%];" data-mask_out="x:inherit;y:inherit;"
                                         data-start="1000" data-splitin="none" data-splitout="none"
                                         data-responsive_offset="on">
-                                        <a href="page-contact.html" class="themesflat-button white big video"><i
+                                        <a href="{% url 'contact' %}" class="themesflat-button white big video"><i
                                                 class="flat-icon-check-1 font-size-25"></i>LEARN MORE</a>
                                     </div>
                                 </li>
@@ -262,14 +262,15 @@ Beachclose
                                     <h3 class="title-video">We are independent and free from third party influence.</h3>
                                     <div class="themesflat-spacer clearfix" data-desktop="21" data-mobi="20"
                                         data-smobi="20"></div>
-                                    <a href="page-about.html" class="themesflat-button blue">LEARN ABOUT US</a>
+                                    <a href="{% url 'about' %}" class="themesflat-button blue">LEARN ABOUT US</a>
                                     <div class="themesflat-spacer clearfix" data-desktop="28" data-mobi="60"
                                         data-smobi="60"></div>
                                 </div><!-- /.col-md-6 -->
 
                                 <div class="col-md-6 half-background style-1">
                                     <div class="themesflat-icon style-1 clearfix background">
-                                        <a class="icon-wrap popup-video" href="https://youtu.be/na9eBzLMhTg">
+                                        <a class="icon-wrap popup-video" href="https://youtu.be/na9eBzLMhTg"
+                                            target="_blank" rel="noopener noreferrer nofollow">
                                             <span class="icon"><i class="finance-icon-playbutton"></i></span>
                                         </a>
                                     </div><!-- /.themesflat-icon -->
@@ -774,7 +775,7 @@ Beachclose
                                                 </div>
                                             </div>
                                             <div class="button-wrap">
-                                                <a href="page-contact.html"
+                                                <a href="{% url 'contact' %}"
                                                     class="themesflat-button white font-weight-600 margin-top-10 margin-bottom-13">CONTACT
                                                     US TODAY</a>
                                             </div>
