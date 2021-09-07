@@ -9,6 +9,25 @@ About | Beachclose
 {% endblock titlearea %}
 
 {% block cssarea %}
+
+<!-- From about page here  -->
+<!-- Favicon and Touch Icons  -->
+<link rel="shortcut icon" href="assets/icon/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="assets/icon/apple-touch-icon-158-precomposed.png">
+
+<!-- EXTRAA -->
+<!-- <link rel="stylesheet" type="text/css" href="revolution/css/settings.css"> -->
+<!-- RS5.0 Layers and Navigation Styles -->
+<!-- <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css"> -->
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\bootstrap.min.css' %}">
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\font-awesome.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\ionicons.min.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\style2.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'home\styles\css\responsive.css' %}">
 {% endblock cssarea %}
 
 {% block content %}
@@ -168,7 +187,8 @@ About | Beachclose
                                         data-smobi="60"></div>
 
                                     <div class="img-single margin-top--60">
-                                        <img src="assets/img/img-single/img-single2.png" alt="Image">
+                                        <img src="{% static 'home\static_images\img-single\img-single2.png' %}"
+                                            alt="Image">
                                     </div>
                                 </div><!-- /.col-md-6 -->
 
@@ -426,8 +446,8 @@ About | Beachclose
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="themesflat-spacer clearfix" data-desktop="93" data-mobi="60"
-                                        data-smobi="60"></div>
+                                    <div class="themesflat-spacer clearfix" data-desktop="93" data-mobi="40"
+                                        data-smobi="40"></div>
 
                                     <div class="themesflat-headings style-1 clearfix text-center">
                                         <h2 class="heading clearfix">CLIENT TESTIMONIALS</h2>
@@ -440,206 +460,47 @@ About | Beachclose
                                     <div class="themesflat-spacer clearfix" data-desktop="52" data-mobi="40"
                                         data-smobi="40"></div>
 
-                                    <div class="themesflat-carousel-box testimonials-s2 has-bullets bullet-circle"
-                                        data-auto="true" data-loop="false" data-gap="25" data-column="2"
-                                        data-column2="1" data-column3="1">
+                                    <div class="themesflat-carousel-box has-bullets bullet-circle" data-auto="true"
+                                        data-loop="false" data-gap="25" data-column="3" data-column2="2"
+                                        data-column3="1">
                                         <div class="owl-carousel owl-theme">
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
+
+                                            {% if testimonials_data %}
+                                            {% for each_testimonial in testimonials_data %}
+                                            <div class="themesflat-testimonials style-1 clearfix image-circle">
                                                 <div class="item">
                                                     <div class="inner">
                                                         <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
+                                                            <img src="/media/{{ each_testimonial.image }}" alt="Image">
                                                         </div>
-
                                                         <blockquote class="text">
                                                             <div class="start">
+                                                                {% with ''|center:each_testimonial.rating as range %}
+                                                                {% for _ in range %}
                                                                 <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
+                                                                {% endfor %}
+                                                                {% endwith %}
                                                             </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
+                                                            <p>{{ each_testimonial.testimonial }}</p>
                                                             <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
+                                                                <h6 class="name">{{ each_testimonial.full_name }}</h6>
+                                                                <span
+                                                                    class="position">{{ each_testimonial.organization }}</span>
                                                             </div>
                                                         </blockquote>
                                                     </div>
                                                 </div>
                                             </div><!-- /.themesflat-testimonials -->
+                                            {% endfor %}
+                                            {% else %}
+                                            <h5 class="">No testimonial data has been found.</h5>
+                                            {% endif %}
 
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-3.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-3.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-2.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
-
-                                            <div class="themesflat-testimonials style-2 clearfix image-circle">
-                                                <div class="item">
-                                                    <div class="inner">
-                                                        <div class="thumb">
-                                                            <img src="assets/img/testimonials/customer-3.png"
-                                                                alt="Image">
-                                                        </div>
-
-                                                        <blockquote class="text">
-                                                            <div class="start">
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                                <i class="finance-icon-star"></i>
-                                                            </div>
-                                                            <p>I would like to say how thankful I am for Finance Group.
-                                                                I have been a valued customer there for many years. They
-                                                                have helped me when some of the major lenders would not
-                                                                because of a credit score. I appreciate them so much.
-                                                                They gave me the opportunity to build up trust and repay
-                                                                my bill. I have recommended Finance Group too many of my
-                                                                friends and coworkers.</p>
-                                                            <div class="name-pos">
-                                                                <h6 class="name">SABRINA BROWN</h6>
-                                                                <span class="position">Delicates Studio</span>
-                                                            </div>
-                                                        </blockquote>
-                                                    </div>
-                                                </div>
-                                            </div><!-- /.themesflat-testimonials -->
                                         </div>
                                     </div><!-- /.themesflat-carousel-box -->
 
-                                    <div class="themesflat-spacer clearfix" data-desktop="87" data-mobi="60"
-                                        data-smobi="60"></div>
+                                    <div class="themesflat-spacer clearfix" data-desktop="32" data-mobi="0"
+                                        data-smobi="0"></div>
                                 </div><!-- /.col-md-12 -->
                             </div><!-- /.row -->
                         </div><!-- /.container -->

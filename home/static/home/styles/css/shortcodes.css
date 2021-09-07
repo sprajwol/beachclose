@@ -45,10 +45,10 @@
 	.row.separator > [class*="col-"] { border: 0 !important; }
 }
 
-.row-certified-1 { background: url(../img/bg-section-1.jpg) center center; }
+.row-certified-1 { background: url(../../bg-section-1.jpg) center center; }
 .row-trusted-1 { background: url(../img/bg-section-2.jpg) center center; }
-.row-facts-1 { background: url(../img/parallax/parallax1.jpg) center center; }
-.row-facts-2 { background: url(../img/parallax/parallax2.jpg) center center; }
+.row-facts-1 { background: url(../../static_images/parallax/parallax1.jpg) center center; }
+.row-facts-2 { background: url(../../static_images/parallax/parallax2.jpg) center center; }
 .row-gallery-1 { background: url(../img/bg-section-4.jpg) center center; background-attachment: fixed; }
 .row-testimonials-1 { background: url(../img/bg-section-5.jpg) center center; background-size: cover; }
 
@@ -59,8 +59,8 @@
 /* Columns
 -------------------------------------------------------------- */    
 /* Style 1 */
-.half-background.style-1 { background-image:url('../img/video/bg_video1.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
-.half-background.style-2 { background-image:url('../img/video/bg_video2.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
+.half-background.style-1 { background-image:url('../../static_images/shortcodes/video/bg_video1.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
+.half-background.style-2 { background-image:url('../../static_images/shortcodes/video/bg_video2.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
 .half-background.style-3 { background-image:url('../img/img-single/img-single1.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
 
 .half-background.style-4 { background-image:url('../img/img-single/img-single3.jpg'); background-size: cover; overflow: hidden; background-position: center; background-repeat: no-repeat; }
